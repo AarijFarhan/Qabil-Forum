@@ -10,7 +10,16 @@ const userSchema=mongoose.Schema({
     studentId: {
         type: Number,
       },
+    otp: {
+        type: Number,
+      },
     password: {
+        type: String,
+      },
+    confirmpassword: {
+        type: String,
+      },
+    newpassword: {
         type: String,
       },
     email: {
