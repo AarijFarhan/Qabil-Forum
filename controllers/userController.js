@@ -13,8 +13,10 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: "aarijfarhan74@gmail.com",
-    pass: "ieif jrfb sfrp lzco",
+    // user: "aarijfarhan74@gmail.com",
+    user: EMAIL,
+    // pass: "ieif jrfb sfrp lzco",
+    pass: PASSWORD,
   }
 })
 
@@ -143,7 +145,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
   await user.save();
 
   await transporter.sendMail({
-    from: "aarijfarhan74@gmail.com",
+    from: EMAIL,
     to: email,
     subject: 'OTP has been sent',
     text: `Your OTP is ${otp}`
